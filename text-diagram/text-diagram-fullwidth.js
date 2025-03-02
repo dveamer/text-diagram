@@ -314,8 +314,6 @@ var html_render = (function() {
 
     var meta = in_ast.meta;
 
-    console.log('meta:', meta);
-
     //init canvas
     var ccanvas = _ccanvas(meta.width, meta.height);
     //console.log(meta.width + ", " + meta.height);
@@ -332,7 +330,7 @@ var html_render = (function() {
         var line_len = meta.lines[rightObj].x_offset - meta.lines[leftObj].x_offset - 1;
 
         var cmessage = _cmessage(ast.attr.message, line_len, s == leftObj, s == r);
-        console.log('message:', ast.attr.message + ', line_len:', line_len + ', leftToRight:', (s == leftObj) + ', isSelfMessage:', (s == r));
+        //console.log('message:', ast.attr.message + ', line_len:', line_len + ', leftToRight:', (s == leftObj) + ', isSelfMessage:', (s == r));
 
         _draw_cpoints(ccanvas, meta.lines[leftObj].x_offset + 1 - meta.min_x, ast.meta.y1, cmessage);
       }
